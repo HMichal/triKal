@@ -33,10 +33,14 @@ int oriPointx = 0;
 int oriPointy = 0;
 float disp = 0;
 int dotSize = 3;
+int till=1;
 
 String readyImage = "fl_201482_127_2933";
 boolean nekudot = false;
 TriangleObj[] tri;
+color []bottom2top = new color[4];
+float []wBot2top = new float[4];
+int transColor;
 
 /////// setup ///////////////
 void setup() { 
@@ -85,6 +89,11 @@ public void initit(int byMouse) {
   float mini = 0;
   float limang = TWO_PI/fac+1;
   int i = 0;
+  bottom2top = new color[4];
+  wBot2top = new float[4];
+  till = 1;
+  if (!showFill) till = bottom2top.length;
+  
   for (int k=numof-1; k >= 0; k--) {
     if (makeShort) {
       limtri = rectSize.x*float((k+1))/float(numof);
